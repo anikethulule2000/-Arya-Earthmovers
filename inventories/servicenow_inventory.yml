@@ -1,0 +1,19 @@
+plugin: servicenow.servicenow.now
+instance: dev230891
+username: admin
+password: jR3qdAOm4G-%
+table: cmdb_ci_computer            # CMDB table name
+fields:
+  - name
+  #- ip_address
+  #- os
+  #- company
+compose:
+  #sn_tags: sn_sys_tags.replace(" ", "").split(',')
+  #ansible_host: sn_ip_address
+  host_field: name
+keyed_groups:
+  - key: os
+    prefix: os
+  - key: company.name
+    prefix: company
